@@ -61,6 +61,7 @@
         color:white;
         text-align:center;
         border-radius:3px;
+        font-weight: bold;
       }
 
       .email-container{
@@ -152,8 +153,43 @@
         margin-bottom: 25px;
       }
 
+      /* BLOG */
+      .blog__post--lead{
+        padding-bottom: 30px;
+      }
+      .blog__title{
+        margin-top:0;
+      }
+      .blog__column{
+        display:inline;
+        padding-bottom:30px;
+      }
 
+      /* HIRING */
+      .hiring__inner{
+        background-color: #F4F2F3;
+      }
+      .hiring__button{
+        font-size: 16px;
+        display: inline-block;
+        padding: 10px 25px;
+        text-decoration: none !important;
+        border: 3px solid #E53094;
+        color: #E53094;
+        text-align: center;
+        border-radius: 3px;
+        font-weight: bold;
+      }
 
+      /* SIGNOFF */
+      .signoff__divider{
+        border: 1px solid #E53094;
+        margin: 35px 0px;
+      }
+      .signoff__logo{
+        max-width: 150px;
+        margin-top: 15px;
+      }
 
 
       /* MOBILE-ONLY STYLES */
@@ -171,7 +207,7 @@
           visibility:hidden !important;
           opacity:0 !important;
         }
-        .events__column{
+        .events__column, .blog__column{
           width:100% !important;
           max-width: 100% !important;
         }
@@ -236,121 +272,193 @@
                   </tr>
                   </table>
 
-                <!-- NEWS -->
-                <table class="news" border="0" cellspacing="0" cellpadding="20" width="100%" mc:hideable>
-                  <tr>
-                    <td>
-                      <h2 mc:edit="newssectiontitle">What's been happening?</h2>
-                      <table>
+                  <!-- NEWS -->
+                  <table class="news" border="0" cellspacing="0" cellpadding="20" width="100%" mc:hideable>
+                    <tr>
+                      <td>
+                        <h2 mc:edit="newssectiontitle">What's been happening?</h2>
+                        <table>
+                          <tr>
+                            <td mc:edit="leadnewsstory">
+                              <img alt="image" src="http://placehold.it/600x400">
+                              <h3>London Office of Technology and Innovation</h3>
+                              <p>FutureGov have joined a consortium commissioned by the Greater London Authority to scope out the potential for a London Office of Technology and Innovation. LOTI will allow London to develop into a truly world class city - join the conversation. <a href="http://hello.com">Read more…</a></p>
+                          </td>
+                        </tr>
+                      </table>
+
+                      <table mc:repeatable>
                         <tr>
-                          <td mc:edit="leadnewsstory">
-                            <img alt="image" src="http://placehold.it/600x400">
-                            <h3>London Office of Technology and Innovation</h3>
-                            <p>Read more…</a>
+                          <td mc:edit="newsstory">
+                            <h4>We just moved to our new office in London Bridge</h4>
+                            <p>We are inviting senior leaders from councils across northern UK to join us in a workshop to understand digital maturity and your organisation. </p>
+                          </td>
+                        </tr>
+                      </table>
+
+                    </td>
+                  </tr>
+                  </table>
+
+                  <!-- EVENTS -->
+                  <table class="events" border="0" cellspacing="0" cellpadding="20" width="100%" mc:hideable>
+                    <tr>
+                      <td>
+                        <h2 mc:edit="eventssectiontitle">Events</h2>
+                        
+                        <table class="events__event" border="0" cellpadding="0" cellspacing="0" mc:repeatable>
+                          <tr>
+                            <td>
+                              <table class="events__column" border="0" cellspacing="0" cellpadding="0" align="left" width="280">
+                                <tr>
+                                  <td>
+                                    <img width="100%" src="http://placehold.it/600x400" alt="image">
+                                  </td>
+                                  <td width="20" class="mobile-hide">
+                                  </td>
+                                </tr>
+                              </table>
+                              <!--[if (gte mso 9)|(IE)]>
+                            </td>
+                            <td>
+                              <![endif]-->
+                              <table class="events__column" border="0" cellspacing="0" cellpadding="0" align="right" width="280">
+                                <tr>
+                                  <td>
+                                    <h3 class="events__title">Digital maturity and your organisation workshop</h3>
+                                    <p>We are inviting senior leaders from councils across northern UK to join us in a workshop to understand digital maturity and your organisation.</p>
+                                    <p>Join us to be involved in our workshop and discussion. Sign-up today to reserve your sit. </p>
+                                    <a class="button" href="#">Register</a>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                        <table class="events__event" border="0" cellpadding="0" cellspacing="0" mc:repeatable>
+                          <tr>
+                            <td>
+                              <table class="events__column" border="0" cellspacing="0" cellpadding="0" align="left" width="280">
+                                <tr>
+                                  <td>
+                                    <img width="100%" src="http://placehold.it/600x400" alt="image">
+                                  </td>
+                                  <td width="20">
+                                  </td>
+                                </tr>
+                              </table>
+                              <!--[if (gte mso 9)|(IE)]>
+                            </td>
+                            <td>
+                              <![endif]-->
+                              <table class="events__column" border="0" cellspacing="0" cellpadding="0" align="right" width="280">
+                                <tr>
+                                  <td>
+                                    <h3 class="events__title">Digital maturity and your organisation workshop</h3>
+                                    <p>We are inviting senior leaders from councils across northern UK to join us in a workshop to understand digital maturity and your organisation.</p>
+                                    <p>Join us to be involved in our workshop and discussion. Sign-up today to reserve your sit. </p>
+                                    <a class="button" href="#">Register</a>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+
+                  <!-- QUOTE -->
+                  <table class="quote" cellpadding="20" width="100%" mc:hideable>
+                    <tr>
+                      <td align="center">
+                        <center mc:edit="quote">
+                          <hr class="quote__divider">
+                          <p class="quote__quotation"><i>“We’ve learned that true co-design really can deliver brilliant results. We’ve become more honest and open with our residents and that’s resulted in better community relationships.”</i>
                           </p>
-                        </td>
-                      </tr>
-                    </table>
+                          <b class="quote__citation-name">Charlotte Pomery</b>
+                          <p class="quote__citation-role">Commissioning Director of Haringey, Adult Social Care</p>
+                          <hr class="quote__divider">
+                        </center>
+                      </td>
+                    </tr>
+                  </table>
 
-                    <table mc:repeatable>
-                      <tr>
-                        <td mc:edit="newsstory">
-                          <h4>We just moved to our new office in London Bridge</h4>
-                          <p>We are inviting senior leaders from councils across northern UK to join us in a workshop to understand digital maturity and your organisation. </p>
-                        </td>
-                      </tr>
-                    </table>
+                  <!-- BLOG -->
+                  <table class="blog" border="0" cellspacing="0" cellpadding="20" width="100%" mc:hideable>
+                    <tr>
+                      <td>
+                        <h2 mc:edit="blogsectiontitle">Blog</h2>
+                        
+                        <table>
+                          <tr>
+                            <td class="blog__post--lead" mc:edit="leadnewsstory">
+                              <img alt="image" src="http://placehold.it/600x400">
+                              <h3>A guide to different types of prototyping</h3>
+                              <p>Prototyping can be applied as a mindset and approach for how your entire organisation works and delivers change.</p>
+                            </td>
+                          </tr>
+                        </table>
 
-                  </td>
-                </tr>
-                </table>
+                        <table class="blog__post" border="0" cellpadding="0" cellspacing="0" mc:repeatable>
+                          <tr>
+                            <td>
+                              <table class="blog__column" border="0" cellspacing="0" cellpadding="0" align="left" width="280">
+                                <tr>
+                                  <td>
+                                    <img width="100%" src="http://placehold.it/600x400" alt="image">
+                                  </td>
+                                  <td width="20">
+                                  </td>
+                                </tr>
+                              </table>
+                              <!--[if (gte mso 9)|(IE)]>
+                            </td>
+                            <td>
+                              <![endif]-->
+                              <table class="blog__column" border="0" cellspacing="0" cellpadding="0" align="right" width="280">
+                                <tr>
+                                  <td>
+                                    <h3 class="blog__title">Digital maturity and your organisation workshop</h3>
+                                    <p>We are inviting senior leaders from councils across northern UK to join us in a workshop to understand digital maturity and your organisation.</p>
+                                    <i class="blog__author">By Cat Drew</i>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
 
-              <!-- EVENTS -->
-              <table class="events" border="0" cellspacing="0" cellpadding="20" width="100%" mc:hideable>
-                <tr>
-                  <td>
-                    <h2 mc:edit="eventssectiontitle">Events</h2>
-                    
-                    <table class="events__event" border="0" cellpadding="0" cellspacing="0" mc:repeatable>
-                      <tr>
-                        <td>
-                          <table class="events__column" border="0" cellspacing="0" cellpadding="0" align="left" width="280">
-                            <tr>
-                              <td>
-                                <img width="100%" src="http://placehold.it/600x400" alt="image">
-                              </td>
-                              <td width="20" class="mobile-hide">
-                              </td>
-                            </tr>
-                          </table>
-                          <!--[if (gte mso 9)|(IE)]>
-                        </td>
-                        <td>
-                          <![endif]-->
-                          <table class="events__column" border="0" cellspacing="0" cellpadding="0" align="right" width="280">
-                            <tr>
-                              <td>
-                                <h3 class="events__title">Digital maturity and your organisation workshop</h3>
-                                <p>We are inviting senior leaders from councils across northern UK to join us in a workshop to understand digital maturity and your organisation.</p>
-                                <p>Join us to be involved in our workshop and discussion. Sign-up today to reserve your sit. </p>
-                                <a class="button" href="#">Register</a>
-                              </td>
-                            </tr>
-                          </table>
-                        </td>
-                      </tr>
-                    </table>
-                    <table class="events__event" border="0" cellpadding="0" cellspacing="0" mc:repeatable>
-                      <tr>
-                        <td>
-                          <table class="events__column" border="0" cellspacing="0" cellpadding="0" align="left" width="280">
-                            <tr>
-                              <td>
-                                <img width="100%" src="http://placehold.it/600x400" alt="image">
-                              </td>
-                              <td width="20">
-                              </td>
-                            </tr>
-                          </table>
-                          <!--[if (gte mso 9)|(IE)]>
-                        </td>
-                        <td>
-                          <![endif]-->
-                          <table class="events__column" border="0" cellspacing="0" cellpadding="0" align="right" width="280">
-                            <tr>
-                              <td>
-                                <h3 class="events__title">Digital maturity and your organisation workshop</h3>
-                                <p>We are inviting senior leaders from councils across northern UK to join us in a workshop to understand digital maturity and your organisation.</p>
-                                <p>Join us to be involved in our workshop and discussion. Sign-up today to reserve your sit. </p>
-                                <a class="button" href="#">Register</a>
-                              </td>
-                            </tr>
-                          </table>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-              </table>
+                      </td>
+                    </tr>
+                  </table>
 
-              <!-- QUOTE -->
-              <table class="quote" cellpadding="20" width="100%" mc:hideable>
-                <tr>
-                  <td align="center">
-                    <center mc:edit="quote">
-                      <hr class="quote__divider">
-                      <p class="quote__quotation"><i>“We’ve learned that true co-design really can deliver brilliant results. We’ve become more honest and open with our residents and that’s resulted in better community relationships.”</i>
-                      </p>
-                      <b class="quote__citation-name">Charlotte Pomery</b>
-                      <p class="quote__citation-role">Commissioning Director of Haringey, Adult Social Care</p>
-                      <hr class="quote__divider">
-                    </center>
-                  </td>
-                </tr>
-              </table>
+                  <!-- HIRING -->
+                  <table class="hiring" cellpadding="20" width="100%" mc:hideable>
+                    <tr>
+                      <td>
+                        <table class="hiring__inner" cellpadding="25x">
+                          <tr>
+                            <td mc:edit="hiring">
+                              <h2>We're hiring!</h2>
+                              <p>If you are looking for a new challenge and the change to work on complex social project that make a tangible and positive impact to on communities - we want to hear from you. We are looking for service designers, delivery managers and developers.</p>
+                              <a class="hiring__button" href="#">View jobs at FutureGov</a>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
 
-
-
+                  <!-- SIGNOFF -->
+                  <table class="signoff" cellpadding="20" width="100%" mc:hideable>
+                    <tr>
+                      <td mc:edit="signoff"><hr class="signoff__divider">
+                        <p>This is just a little goodbye to close off this wonderful newsletter. We will see you again in another 2 months so get ready and make sure to share our news. Looking forward to having you read our newsletter again!</p>
+                        <img alt="Futuregov" class="signoff__logo" src="https://gallery.mailchimp.com/8164ad56924f0b0739b2e18ed/images/f0150e21-d993-4ec1-8b97-2949822c58e4.png">
+                        <hr class="signoff__divider"></td>
+                    </tr>
+                  </table>
 
               <!-- END SECTIONS -->
             </td>
