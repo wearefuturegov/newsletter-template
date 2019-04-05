@@ -26,6 +26,7 @@
       }
 
       img{
+        display: block;
         width:100%;
         height:auto;
         border:0;
@@ -62,6 +63,7 @@
         text-align:center;
         border-radius:3px;
         font-weight: bold;
+        background: none;
       }
 
       .email-container{
@@ -69,17 +71,23 @@
         background:white;
       }
 
+      /* Hidden preview text */
+      .mcnPreviewText{
+        display: none !important;
+        }
+
       /* PREHEADER */
       .preheader{
         font-size:10px !important;
         color:#b6b4b5;
+        text-align: center;
+      }
+      .preheader__inner{
+        width: 100%;
       }
       .preheader__text{
         margin-top:0;
         margin-bottom:10px;
-      }
-      .preheader__preview{
-        padding-right:30px;
       }
 
       /* HEADER */
@@ -110,6 +118,10 @@
       }
 
       /* NEWS */
+      .news__section-title{
+        margin-top: 0px;
+      }
+
       .news__story{
         padding-bottom:20px;
       }
@@ -179,6 +191,7 @@
         text-align: center;
         border-radius: 3px;
         font-weight: bold;
+        margin-top: 10px;
       }
 
       /* SIGNOFF */
@@ -205,6 +218,15 @@
       .footer__copyright{
         margin-bottom: 30px;
       }
+      .footer__social-links{
+          width: 100%;
+          max-width: 300px;
+        }
+      .footer__social-link{
+          padding: 20px;
+        }
+      .footer__social img{
+      }
 
 
 
@@ -227,11 +249,16 @@
           width:100% !important;
           max-width: 100% !important;
         }
+        .footer__social-link{
+          padding: 15px;
+        }
       }
 
     </style>
   </head>
   <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
+
+
     <center>
       <table class="body-table" width="100%" cellspacing="0" cellpadding="0" border="0" align="center">
         <tr>
@@ -243,20 +270,15 @@
                 <td>
                   <!-- START SECTIONS -->
 
+                  <!--*|IF:MC_PREVIEW_TEXT|*--> 
+                  <!--[if !gte mso 9]><!----><span class="mcnPreview Text" style="display:none; font-size:0px; line-height:0px; max-height:0px; max-width:0px; opacity:0; overflow:hidden; visibility:hidden; mso-hide:all;">*|MC_PREVIEW_TEXT|*</span><!--<![endif]--> 
+                  <!--*|END:IF|*-->
+
                   <!-- PREHEADER -->
                   <table class="preheader" width="100%" cellpadding="20">
                     <tr>
-                      <td>
-                        <table>
-                          <tr>
-                            <td valign="top" mc:edit="preheaderpreview" class="mobile-hide preheader__preview" width="65%">
-                              <font color="#b6b4b5" size="1">Use this area to offer a short teaser of your email's content. Text here will show in the preview area of some email clients.</font>
-                            </td>
-                            <td valign="top" class="mobile-collapse" width="35%">
-                              <font color="#b6b4b5" size="1">Email not displaying correctly?<br><a href="*|ARCHIVE|*">View it in your browser</a>.</font>
-                            </td>
-                          </tr>
-                        </table>
+                      <td valign="top">
+                        <font color="#b6b4b5" size="2">Email not displaying correctly? <a href="*|ARCHIVE|*">View it in your browser</a>.</font>
                       </td>
                     </tr>
                   </table>
@@ -270,7 +292,7 @@
                       </td>
                     </tr>
                     <tr>
-                      <td width="100%">
+                      <td width="100%" valign="bottom">
                         <img class="header__border" src="https://gallery.mailchimp.com/8164ad56924f0b0739b2e18ed/images/51616506-5914-47c8-98f3-6897e533d21f.png">
                       </td>
                     </tr>
@@ -292,7 +314,7 @@
                   <table class="news" border="0" cellspacing="0" cellpadding="20" width="100%" mc:hideable>
                     <tr>
                       <td>
-                        <h2 mc:edit="newssectiontitle">What's been happening?</h2>
+                        <h2 class="news__section-title" mc:edit="newssectiontitle">What's been happening?</h2>
                         <table>
                           <tr>
                             <td mc:edit="leadnewsstory">
@@ -327,7 +349,7 @@
                             <td>
                               <table class="events__column" border="0" cellspacing="0" cellpadding="0" align="left" width="280">
                                 <tr>
-                                  <td>
+                                  <td mc:edit="eventimage">
                                     <img width="100%" src="http://placehold.it/600x400" alt="image">
                                   </td>
                                   <td width="20" class="mobile-hide">
@@ -340,7 +362,7 @@
                               <![endif]-->
                               <table class="events__column" border="0" cellspacing="0" cellpadding="0" align="right" width="280">
                                 <tr>
-                                  <td>
+                                  <td mc:edit="eventtext">
                                     <h3 class="events__title">Digital maturity and your organisation workshop</h3>
                                     <p>We are inviting senior leaders from councils across northern UK to join us in a workshop to understand digital maturity and your organisation.</p>
                                     <p>Join us to be involved in our workshop and discussion. Sign-up today to reserve your sit. </p>
@@ -351,35 +373,7 @@
                             </td>
                           </tr>
                         </table>
-                        <table class="events__event" border="0" cellpadding="0" cellspacing="0" mc:repeatable>
-                          <tr>
-                            <td>
-                              <table class="events__column" border="0" cellspacing="0" cellpadding="0" align="left" width="280">
-                                <tr>
-                                  <td>
-                                    <img width="100%" src="http://placehold.it/600x400" alt="image">
-                                  </td>
-                                  <td width="20">
-                                  </td>
-                                </tr>
-                              </table>
-                              <!--[if (gte mso 9)|(IE)]>
-                            </td>
-                            <td>
-                              <![endif]-->
-                              <table class="events__column" border="0" cellspacing="0" cellpadding="0" align="right" width="280">
-                                <tr>
-                                  <td>
-                                    <h3 class="events__title">Digital maturity and your organisation workshop</h3>
-                                    <p>We are inviting senior leaders from councils across northern UK to join us in a workshop to understand digital maturity and your organisation.</p>
-                                    <p>Join us to be involved in our workshop and discussion. Sign-up today to reserve your sit. </p>
-                                    <a class="button" href="#">Register</a>
-                                  </td>
-                                </tr>
-                              </table>
-                            </td>
-                          </tr>
-                        </table>
+
                       </td>
                     </tr>
                   </table>
@@ -408,7 +402,7 @@
                         
                         <table>
                           <tr>
-                            <td class="blog__post--lead" mc:edit="leadnewsstory">
+                            <td class="blog__post--lead" mc:edit="leadblogstory">
                               <img alt="image" src="http://placehold.it/600x400">
                               <h3>A guide to different types of prototyping</h3>
                               <p>Prototyping can be applied as a mindset and approach for how your entire organisation works and delivers change.</p>
@@ -421,7 +415,7 @@
                             <td>
                               <table class="blog__column" border="0" cellspacing="0" cellpadding="0" align="left" width="280">
                                 <tr>
-                                  <td>
+                                  <td mc:edit="blogimage">
                                     <img width="100%" src="http://placehold.it/600x400" alt="image">
                                   </td>
                                   <td width="20">
@@ -434,7 +428,7 @@
                               <![endif]-->
                               <table class="blog__column" border="0" cellspacing="0" cellpadding="0" align="right" width="280">
                                 <tr>
-                                  <td>
+                                  <td mc:edit="blogtext">
                                     <h3 class="blog__title">Digital maturity and your organisation workshop</h3>
                                     <p>We are inviting senior leaders from councils across northern UK to join us in a workshop to understand digital maturity and your organisation.</p>
                                     <i class="blog__author">By Cat Drew</i>
@@ -458,7 +452,7 @@
                             <td mc:edit="hiring">
                               <h2>We're hiring!</h2>
                               <p>If you are looking for a new challenge and the change to work on complex social project that make a tangible and positive impact to on communities - we want to hear from you. We are looking for service designers, delivery managers and developers.</p>
-                              <a class="hiring__button" href="#">View jobs at FutureGov</a>
+                              <a class="hiring__button" href="https://www.wearefuturegov.com/careers">View jobs at FutureGov</a>
                             </td>
                           </tr>
                         </table>
@@ -478,22 +472,35 @@
 
                   <!-- FOOTER -->
                   <table class="footer" cellpadding="20" width="100%">
-                    <tr class="footer__social">
-                      <td></td>
+                    <tr class="footer__social" align="center">
+                      <td>
+
+                      
+                          <table class="footer__social-links" width="100%">
+                              <tr>
+                                  <td class="footer__social-link"><a href="https://wearefuturegov.com"><img alt="website" src="https://gallery.mailchimp.com/8164ad56924f0b0739b2e18ed/images/e5091e0e-b893-4c51-be60-9aeff2003932.jpg"/></a></td>
+                                  <td class="footer__social-link"><a href="https://www.linkedin.com/company/futuregov"><img alt="linkedin" src="https://gallery.mailchimp.com/8164ad56924f0b0739b2e18ed/images/08f7d2a3-68d3-4dc4-ad99-c8c9aa92f0c9.jpg"/></a></td>
+                                  <td class="footer__social-link"><a href="https://www.instagram.com/futuregov"><img alt="instagram" src="https://gallery.mailchimp.com/8164ad56924f0b0739b2e18ed/images/091c3b2a-38a9-4b92-951d-00fd904cc3bd.jpg"/></a></td>
+                                  <td class="footer__social-link"><a href="https://twitter.com/FutureGov"><img alt="twitter" src="https://gallery.mailchimp.com/8164ad56924f0b0739b2e18ed/images/d3f5c9a6-9bdc-461c-b855-234c44c2a59d.jpg"/></a></td>      
+                              </tr>
+                            </table>
+
+                      </td>
                     </tr>
                     <tr class="footer__info">
                       <td align="center" mc:edit="footer">
-                        <!-- <font color="#6a6769" size="2"> -->
-                          <p class="footer__copyright"><em>Copyright 2018 FutureGov, All rights reserved</em>
+                          <p class="footer__copyright"><em>Copyright 2019 FutureGov, All rights reserved</em>
                           </p>
                           <p><strong>Our mailing address is:</strong>
                           </p>
-                          <p><a href="#">email@mail.com</a>
+                          <p>FutureGov<br/>
+                              Runway East, 20 St Thomas Street<br/>
+                              London, London SE1 9RG<br/>
+                              United Kingdom<br/>
                           </p>
                           <p><strong>Want to change how you receieve these emails?</strong>
                           </p>
-                          <p>You can <a href="#">unsubscribe from this list</a>.</p>
-                        <!-- </font> -->
+                          <p>You can <a href="*|UPDATE_PROFILE|*">update your preferences</a> or <a href="*|UNSUB|*">unsubscribe from this list</a>.</p>
                       </td>
                     </tr>
                   </table>
